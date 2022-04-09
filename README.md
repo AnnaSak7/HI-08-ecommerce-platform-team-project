@@ -19,7 +19,7 @@
 
   
 ## :mechanical_arm: Skills developed
- **:zap: Practicing an Agile workflow developing the product in sprints. 
+ **:zap: Practicing an Agile workflow developing the product in sprints. <br>
  :zap: Evolving our code collaboration skills trough GIT and GitHub.**
       
 
