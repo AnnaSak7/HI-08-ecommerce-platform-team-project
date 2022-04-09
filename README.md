@@ -2,7 +2,7 @@
   
 ## :page_facing_up: Brief
  **:zap: Collaborating in a team and through an Agile workflow and the SCRUM method construct an eCommerce site.  <br>
-   :zap: Project idea: The shop will sell memories to customer that for any reason don't have the posibilities to experience one. <br>
+   :zap: Project idea: The shop will sell memories to customer that for any reason don't have the posibilities to experience one.** <br>
    
 
 ## :card_index_dividers: Project Setup 
@@ -25,12 +25,9 @@
 
             
  ## :dancing_women: Team 
-   **:zap:[Anna Sakurai] (https://github.com/AnnaSak7)
-     :zap:[Christina Cepeda] (https://github.com/ChrisCepeda)
-     :zap:[Lina Simon] (https://github.com/LinaSimon)
-     :zap:[Sanna Vogel] (https://github.com/SanVog)
-     :zap:[Sophie König] (https://github.com/SophieKoenig)
-     :zap:[Tintin Hamrin] (https://github.com/TintinHamrin)
-   
-   
-   **
+   **:zap:[Anna Sakurai](https://github.com/AnnaSak7)<br>
+     :zap:[Christina Cepeda](https://github.com/ChrisCepeda)<br>
+     :zap:[Lina Simon](https://github.com/LinaSimon)<br>
+     :zap:[Sanna Vogel](https://github.com/SanVog)<br>
+     :zap:[Sophie König](https://github.com/SophieKoenig)<br>
+     :zap:[Tintin Hamrin](https://github.com/TintinHamrin)**
