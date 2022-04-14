@@ -22,14 +22,10 @@
     :zap: Figma<br>
      :zap: Trello**<br>
  
-Coaching the team members in self-management and cross-functionality;
-Helping the Scrum Team focus on creating high-value Increments that meet the Definition of Done;
-Causing the removal of impediments to the Scrum Team’s progress; and,
-Ensuring that all Scrum events take place and are positive, productive, and kept within the timebox.
   
 ## :mechanical_arm: Skills developed
  **:zap: Practicing an Agile workflow developing the product in sprints. <br>
-  :zap: Taking the role as a SCRUM master helping the team create high value increments and ensuring that all events take place.<br>
+  :zap: Taking the role as a SCRUM master helping the team create high value increments and ensuring that all events take place within the timeframe.<br>
  :zap: Evolving our code collaboration skills trough GIT and GitHub.**
       
 
