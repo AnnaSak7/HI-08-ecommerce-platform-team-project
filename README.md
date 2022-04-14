@@ -15,7 +15,13 @@
  :zap: Express.js <br>
  :zap: React<br>
  :zap: Node.js<br>
- :zap: GIT and GitHub**<br>
+  :zap: Mongoose<br>
+   :zap: Next.js<br>
+   :zap: Material UI<br>
+   :zap: GIT and GitHub<br>
+    :zap: Figma<br>
+     :zap: Trello**<br>
+ 
 
   
 ## :mechanical_arm: Skills developed
