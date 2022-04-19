@@ -4,6 +4,8 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    border-left: 1rem solid #5FA0A4;
+    border-right: 1rem solid #5FA0A4;
 }
 
 a {
@@ -13,4 +15,31 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+.odd-container{
+  display: flex;
+}
+.even-container{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.image-container{
+  width: 50%;
+  height: 50vh;
+background-color: #000;
+object-fit: cover;
+}
+.image-container img{
+  width: 100%;
+  height: 100%;
+
+}
+.textBox{
+  width: 50%;
+  height: 50vh;
+  background-color: #5FA0A4;
+  padding: 7rem;
+  font-size: 1.1rem;
 }
