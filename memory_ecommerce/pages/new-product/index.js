@@ -9,7 +9,7 @@ const NewProductPage = () => {
   const router = useRouter();
 
   async function addProductHandler(enteredProductData) {
-    const response = await fetch('/api/new-meetup', {
+    const response = await fetch('/api/new-product', {
       method: 'POST',
       body: JSON.stringify(enteredProductData),
       headers: {
