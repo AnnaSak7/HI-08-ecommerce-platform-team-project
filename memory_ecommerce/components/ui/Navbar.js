@@ -175,16 +175,11 @@ export default function PrimarySearchAppBar() {
             <Image src="/logo.svg" height={40} width={60} alt="xxx" />
           </IconButton>
           <div className={classes.wrapper}>
-            <Typography
-              textAlign="center"
-              variant="h4"
-              noWrap
-              component="div"
-            >
+            <Typography textAlign="center" variant="h4" noWrap component="div">
               Memory X
             </Typography>
             <Box sx={{ flexGrow: 1 }} />
-            <Search>
+            <Search sx={{ borderRadius: "20px" }}>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
