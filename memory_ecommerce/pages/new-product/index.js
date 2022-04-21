@@ -1,5 +1,5 @@
 
-// our-domain.com/new-meetup
+// our-domain.com/new-product
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import NewProductForm from '../../components/products/NewProductForm';

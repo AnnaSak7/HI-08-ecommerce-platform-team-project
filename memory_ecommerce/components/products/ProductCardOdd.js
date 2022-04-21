@@ -5,7 +5,7 @@ import img01 from '../../public/product01.png'
 import styles from '../../styles/Product.module.css'
 
 const ProductCardOdd = (props) => {
-  console.log("props", props.image)
+  
   return (
     <div className={styles.oddContainer}>
         <div className={styles.imageContainer}>

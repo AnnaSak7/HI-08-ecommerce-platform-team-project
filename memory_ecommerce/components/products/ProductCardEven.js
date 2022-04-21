@@ -5,7 +5,7 @@ import img01 from '../../public/product01.png'
 import styles from '../../styles/Product.module.css'
 
 const ProductCardEven = (props) => {
-  console.log('name is ', props.name)
+
   return (
     <div className={styles.evenContainer}>
         <div className={styles.imageContainer}>

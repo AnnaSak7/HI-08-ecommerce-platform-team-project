@@ -1,23 +1,22 @@
 import { MongoClient } from "mongodb";
 import Head from "next/head";
-import Image from "next/image";
+
 import ProductList from "../components/products/ProductList";
 import Navbar from "../components/ui/Navbar";
-import Hero from '../public/HeroImage.png'
+import Hero from '../components/ui/Hero'
+
 
 export default function Home(props) {
+  console.log(props.memories)
   return (
     <>
       <Head>
         <title>Memory | Home</title>
         <meta name='description' content="Memory store" />
       </Head>
-    <div>
-      <div id="hero">
-        <Image id="hero-image" src={Hero} alt="Hero" />
-      </div>
+    <Hero />
       <ProductList memories={props.memories}/>
-    </div>
+    
     </>
   )
 }
