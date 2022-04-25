@@ -1,42 +1,64 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
+import classes from "./Cart.module.css";
+import Divider from "@mui/material/Divider";
 
 export default function Cart() {
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="div">
-          be{bull}nev{bull}o{bull}lent
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          adjective
-        </Typography>
-        <Typography variant="body2">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+    <div className={classes.cartWrapper}>
+      <Card className={classes.cartContainer} sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography
+            variant="h5"
+            textAlign="center"
+            color="text.secondary"
+            gutterBottom
+          >
+            CART
+          </Typography>
+          <Divider />
+          <Typography
+            sx={{ mt: "5rem", fontSize: "1.2rem" }}
+            variant="body1"
+            textAlign="center"
+            color="text.secondary"
+            gutterBottom
+          >
+            1 x Swimming With Dolphins
+          </Typography>
+          <Divider />
+        </CardContent>
+
+        <Card className={classes.cartDetails} sx={{ mb: "1rem" }}>
+          <CardContent>
+            <Typography
+              sx={{ fontSize: "1.3rem" }}
+              variant="body1"
+              color="text.secondary"
+              gutterBottom
+            >
+              Items: 1
+            </Typography>
+            <Typography
+              sx={{ fontSize: "1.3rem" }}
+              variant="body1"
+              color="text.secondary"
+              gutterBottom
+            >
+              Total: $150
+            </Typography>
+          </CardContent>
+          <CardActions className={classes.cartButtons}>
+            <Button className={classes.button} size="small">
+              Pay now
+            </Button>
+          </CardActions>
+        </Card>
+      </Card>
+    </div>
   );
 }
