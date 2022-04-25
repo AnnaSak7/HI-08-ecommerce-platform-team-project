@@ -24,7 +24,7 @@ export default function ProductPage(props) {
 }
 
 export async function getStaticPaths(){
-  const client = await MongoClient.connect("mongodb+srv://Anna:annasakurai@cluster0.fof0s.mongodb.net/MemoryStore?retryWrites=true&w=majority")
+  const client = await MongoClient.connect()
 
   const db = client.db()
   const productCollection = db.collection('products')
@@ -45,7 +45,7 @@ export async function getStaticProps(context){
 
   const productId = context.params.productId;
 
-  const client = await MongoClient.connect("mongodb+srv://Anna:annasakurai@cluster0.fof0s.mongodb.net/MemoryStore?retryWrites=true&w=majority")
+  const client = await MongoClient.connect()
   const db = client.db()
   const productCollection = db.collection('products')
   const selectedProduct = await productCollection.findOne({
