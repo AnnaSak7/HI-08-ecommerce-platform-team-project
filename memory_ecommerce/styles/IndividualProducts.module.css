@@ -1,0 +1,18 @@
+
+.divContainer {
+    width: 100%;
+    display: flex;
+}
+.divItem {
+    width: 50%;
+    height: auto;
+}
+.divText {
+    width: 50%;
+    height: auto;
+    padding: 5rem;
+}
+.divItem img {
+    width: 100%;
+    height: 100%;
+}

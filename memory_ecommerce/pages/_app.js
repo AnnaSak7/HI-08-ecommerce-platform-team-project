@@ -1,4 +1,5 @@
 import Layout from '../components/ui/Layout'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
