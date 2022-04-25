@@ -1,43 +1,40 @@
+#hero {
+  width: 100%;
+  height: 100%;
+}
 
-#hero{
-    width: 100%;
-    height: 100%;
-  }
-  
-  #hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .oddContainer{
-    display: flex;
-  }
-  .evenContainer{
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  .imageContainer{
-    width: 50%;
-    height: 50vh;
+#heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.oddContainer {
+  display: flex;
+}
+.evenContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.imageContainer {
+  width: 50%;
+  height: 50vh;
   background-color: #000;
   object-fit: cover;
-  }
-  .imageContainer img{
-    width: 100%;
-    height: 100%;
-  
-  }
-  .textBox{
-    width: 50%;
-    height: 50vh;
-    background-color: #5FA0A4;
-    padding: 7rem;
-    font-size: 1.3rem;
-  }
+}
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+}
+.textBox {
+  width: 50%;
+  height: 50vh;
+  background-color: #5fa0a4;
+  padding: 7rem;
+  font-size: 1.3rem;
+}
 
-  .productName {
-      padding-bottom: 2rem;
-      font-size: 2.5rem;
-  }
-  
+.productName {
+  padding-bottom: 2rem;
+  font-size: 2.5rem;
+}

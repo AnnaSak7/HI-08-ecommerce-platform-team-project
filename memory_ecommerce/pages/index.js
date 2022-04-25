@@ -14,7 +14,7 @@ export default function Home(props) {
       </Head>
       <div>
         <div id="hero">
-          <Image id="hero-image" src={Hero} alt="Hero" />
+          <Image id="heroImage" src={Hero} alt="Hero" />
         </div>
         <ProductList memories={props.memories} />
       </div>
