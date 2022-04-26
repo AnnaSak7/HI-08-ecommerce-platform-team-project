@@ -195,7 +195,7 @@ export default function PrimarySearchAppBar() {
               color="inherit"
               onClick={openCartHandler}
             >
-              <Badge badgeContent={4} color="error">
+              <Badge badgeContent={4} color="info">
                 <ShoppingCartIcon />
               </Badge>
             </IconButton>
