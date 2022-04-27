@@ -84,6 +84,7 @@ export default function AutoGrid() {
               <Button
                 variant="outlined"
                 style={{ backgroundColor: "#5FA0A4", color: "#fff" }}
+                onClick
               >
                 SUBMIT
               </Button>
