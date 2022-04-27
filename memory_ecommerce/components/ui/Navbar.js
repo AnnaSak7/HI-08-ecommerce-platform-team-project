@@ -2,6 +2,7 @@ import * as React from "react";
 import Image from "next/image";
 import { ReactComponent as Logo } from "../../public/logo.svg";
 import { useRouter } from "next/router";
+import AutoComplete from "./AutoComplete";
 //MUI
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
@@ -83,6 +84,10 @@ export default function PrimarySearchAppBar() {
     router.push("/");
   };
 
+  const changeTitle = (event) => {
+    console.log(event.target.value);
+  };
+
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -124,15 +129,21 @@ export default function PrimarySearchAppBar() {
               Memory X
             </Typography>
             <Box sx={{ flexGrow: 1 }} />
-            <Search sx={{ borderRadius: "20px" }}>
+            {/* <Search
+              onChange={console.log("in search")}
+              sx={{ borderRadius: "20px" }}
+            > */}
+            <input type="text" onChange={(evt) => changeTitle(evt)} />
+            {/* <AutoComplete />
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
+                onChange={console.log("in search2")}
                 placeholder="Search for your dream"
                 inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
+              /> */}
+            {/* </Search> */}
 
             <IconButton
               size="large"
