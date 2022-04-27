@@ -35,6 +35,7 @@ export default function PrimarySearchAppBar() {
   const [searchBarInput, setSearchBarInput] = React.useState("");
   const isMenuOpen = Boolean(anchorEl);
   const [suggestions, setSuggestions] = React.useState([]);
+  const [selectedSuggestion, setSelectedSuggestion] = React.useState("");
 
   const openProfileHandler = (event) => {
     console.log("opening user section");
@@ -96,57 +97,68 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: "30%" }}
-            onClick={logoHandler}
-          >
-            <Image src="/logo.svg" height={40} width={60} alt="xxx" />
-          </IconButton>
-          <div className={classes.wrapper}>
-            <Typography textAlign="center" variant="h4" noWrap component="div">
-              Memory X
-            </Typography>
-            <Box sx={{ flexGrow: 1 }} />
-            <div className={classes.searchBarWrapper}>
+    <>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: "30%" }}
+              onClick={logoHandler}
+            >
+              <Image src="/logo.svg" height={40} width={60} alt="xxx" />
+            </IconButton>
+            <div className={classes.wrapper}>
+              <Typography
+                textAlign="center"
+                variant="h4"
+                noWrap
+                component="div"
+              >
+                Memory X
+              </Typography>
+              <Box sx={{ flexGrow: 1 }} />
               <input
-                // value={suggestions}
+                //value={selectedSuggestion}
                 type="text"
                 onChange={(evt) => inputHandler(evt)}
               />
-              <AutoComplete input={suggestions} />
+
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+                onClick={openCartHandler}
+              >
+                <Badge badgeContent={4} color="error">
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={openProfileHandler}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
             </div>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-              onClick={openCartHandler}
-            >
-              <Badge badgeContent={4} color="error">
-                <ShoppingCartIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={openProfileHandler}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
-        </Toolbar>
-      </AppBar>
-      {renderMenu}
-    </Box>
+          </Toolbar>
+        </AppBar>
+        {renderMenu}
+      </Box>
+      {suggestions.length > 0 && (
+        <AutoComplete
+          setSelectedSuggestion={setSelectedSuggestion}
+          input={suggestions}
+        />
+      )}
+    </>
   );
 }

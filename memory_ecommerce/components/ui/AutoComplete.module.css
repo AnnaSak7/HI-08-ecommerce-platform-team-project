@@ -1,0 +1,14 @@
+.suggestionsWrapper {
+  border: 1px solid black;
+  position: absolute;
+  background-color: white;
+  top: 50;
+  right: 10%;
+  left: 70%;
+  z-index: 1;
+}
+
+.listItem {
+  list-style: none;
+  padding: 1rem;
+}

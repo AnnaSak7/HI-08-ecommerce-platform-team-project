@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./AutoComplete.module.css";
 import { useRouter } from "next/router";
 
-function AutoComplete({ input }) {
+function AutoComplete(props) {
   const router = useRouter();
 
   const handleSuggestionClick = (suggestion) => {
@@ -11,11 +11,12 @@ function AutoComplete({ input }) {
   };
 
   return (
-    <div className={classes.suggestions}>
-      <ul>
-        {input.map((suggestion) => (
+    <div className={classes.suggestionsWrapper}>
+      <ul className={classes.ul}>
+        {props.input.map((suggestion) => (
           <li
-            key={Math.random()}
+            className={classes.listItem}
+            key={suggestion}
             onClick={() => handleSuggestionClick(suggestion)}
           >
             {suggestion}
