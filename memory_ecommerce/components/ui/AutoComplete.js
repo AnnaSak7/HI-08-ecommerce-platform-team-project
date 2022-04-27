@@ -1,20 +1,28 @@
 import React, { useState } from "react";
-
-// const products = ["aba", "aca", "ada", "aga", "ala"];
+import classes from "./AutoComplete.module.css";
+import { useRouter } from "next/router";
 
 function AutoComplete({ input }) {
-  //   const [suggestions, setSuggestions] = useState([]);
+  const router = useRouter();
 
-  //   onInputChange = () => {
-  //     const inputRegexp = new RegExp(input, "g");
-  //     console.log(inputRegexp);
-  //   };
+  const handleSuggestionClick = (suggestion) => {
+    console.log(suggestion);
+    router.push(`/${suggestion}`);
+  };
 
   return (
-    <ul>
-      <li key={Math.random()}>{input}</li>
-    </ul>
-    // <div>{products}</div>
+    <div className={classes.suggestions}>
+      <ul>
+        {input.map((suggestion) => (
+          <li
+            key={Math.random()}
+            onClick={() => handleSuggestionClick(suggestion)}
+          >
+            {suggestion}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

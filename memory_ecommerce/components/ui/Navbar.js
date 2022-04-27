@@ -20,47 +20,14 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 //STYLING
 import classes from "./Navbar.module.css";
 
-const Search = styled("div")(({ theme }) => ({
-  position: "relative",
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  "&:hover": {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: "100%",
-  [theme.breakpoints.up("sm")]: {
-    marginLeft: theme.spacing(3),
-    width: "auto",
-  },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: "inherit",
-  "& .MuiInputBase-input": {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("md")]: {
-      width: "20ch",
-    },
-  },
-}));
-
-const products = ["aba", "aca", "ada", "aga", "ala"];
+const products = [
+  //TODO fetch this data from Mongo instead
+  "Lavish Trip",
+  "Long Night Out",
+  "Top Of The World",
+  "Butterflies In The Stomach",
+  "Pearl White Beaches",
+];
 
 export default function PrimarySearchAppBar() {
   const router = useRouter();
@@ -147,22 +114,14 @@ export default function PrimarySearchAppBar() {
               Memory X
             </Typography>
             <Box sx={{ flexGrow: 1 }} />
-            {/* <Search
-              onChange={console.log("in search")}
-              sx={{ borderRadius: "20px" }}
-            > */}
-            <input type="text" onChange={(evt) => inputHandler(evt)} />
-            <AutoComplete input={suggestions} />
-            {/* <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                onChange={console.log("in search2")}
-                placeholder="Search for your dream"
-                inputProps={{ "aria-label": "search" }}
-              />  */}
-            {/* </Search> */}
-
+            <div className={classes.searchBarWrapper}>
+              <input
+                // value={suggestions}
+                type="text"
+                onChange={(evt) => inputHandler(evt)}
+              />
+              <AutoComplete input={suggestions} />
+            </div>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
