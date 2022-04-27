@@ -60,10 +60,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const products = ["aba", "aca", "ada", "aga", "ala"];
+
 export default function PrimarySearchAppBar() {
   const router = useRouter();
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [searchBarInput, setSearchBarInput] = React.useState("");
   const isMenuOpen = Boolean(anchorEl);
+  const [suggestions, setSuggestions] = React.useState([]);
 
   const openProfileHandler = (event) => {
     console.log("opening user section");
@@ -84,8 +88,22 @@ export default function PrimarySearchAppBar() {
     router.push("/");
   };
 
-  const changeTitle = (event) => {
-    console.log(event.target.value);
+  const inputHandler = (event) => {
+    setSearchBarInput(event.target.value);
+    onInputChange(event.target.value);
+  };
+
+  const onInputChange = (val) => {
+    if (val.length === 0) {
+      setSuggestions([]);
+    } else {
+      const inputRegexp = new RegExp(val, "i");
+      console.log(inputRegexp);
+      const filteredSuggestions = products.filter((prod) =>
+        inputRegexp.test(prod)
+      );
+      setSuggestions(filteredSuggestions);
+    }
   };
 
   const menuId = "primary-search-account-menu";
@@ -133,16 +151,16 @@ export default function PrimarySearchAppBar() {
               onChange={console.log("in search")}
               sx={{ borderRadius: "20px" }}
             > */}
-            <input type="text" onChange={(evt) => changeTitle(evt)} />
-            {/* <AutoComplete />
-              <SearchIconWrapper>
+            <input type="text" onChange={(evt) => inputHandler(evt)} />
+            <AutoComplete input={suggestions} />
+            {/* <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
                 onChange={console.log("in search2")}
                 placeholder="Search for your dream"
                 inputProps={{ "aria-label": "search" }}
-              /> */}
+              />  */}
             {/* </Search> */}
 
             <IconButton
