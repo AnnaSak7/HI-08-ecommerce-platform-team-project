@@ -4,6 +4,7 @@ import ProductList from "../components/products/ProductList";
 import Navbar from "../components/ui/Navbar";
 import Hero from '../public/HeroImage.png'
 
+
 export default function Home() {
   return (
     <>
