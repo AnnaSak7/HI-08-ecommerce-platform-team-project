@@ -1,0 +1,35 @@
+.cartWrapper {
+  background-color: #b5e0df;
+  display: flex;
+  justify-content: center;
+}
+
+.cartContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  height: 50vh;
+  width: 50vw;
+}
+
+.cartDetails {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 1rem;
+  width: 40%;
+  flex-direction: column;
+  background-color: #b5e0df;
+}
+
+.cartButtons {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.button {
+  background-color: #5fa0a4;
+}
