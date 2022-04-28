@@ -1,50 +1,66 @@
+
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
+import Image from 'next/image';
+import pic from './asset/mountPic.jpg';
 
 
-//sx props can change styling.
+const Img = styled('img')({
+  margin: 'auto',
+  display: 'block',
+  maxWidth: '100%',
+  maxHeight: '100%',
+});
 
-
-export default function ImgMediaCard(props) {
+export default function ComplexGrid() {
   return (
-    <div style={{ backgroundColor: "#B5E0DF", padding:"30", textAlign: "center", marginLeft: "100"}}>
-    <h1 style={{ marginTop: "30", color: "#5FA0A4"}}>Hello {props.name}</h1>
+    <Paper
+      sx={{
+        p: 2,
+        margin: '30px auto',
+        maxWidth: 500,
+        flexGrow: 1,
+        backgroundColor: (theme) =>
+          theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+      }}
+    >
+      <Grid container spacing={2}>
+        <Grid item>
+          <ButtonBase sx={{ width: 128, height: 128 }}>
+            <Img alt="TOP" src={pic} />
 
-    <h2 style={{ color: "#B3A497", marginTop: "80", textAlign: "left",
-  fontSize: "2"}}>Order History</h2>
-
-    <Card sx={{ maxWidth: 680, backgroundColor: "#e0f5f4", padding:"15"}}>
-  
-      <CardMedia
-        component="img"
-        alt="memory"
-        height="160"
-        image="./mountPic.jpg"
-        style={{ display: "inlineBlock", textAlign:"left"}}
-      
-      />
-      <div style={{ textAlign: "right", color: "#5FA0A4" }}>
-      <CardContent sx={{ textAlign: "right", display:"inlineBlock"}}>
-        <Typography gutterBottom variant="h5" component="div" style={{ color: "#5FA0A4" }}>
-          Climbing K2 {props.memoryTitel}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" style={{ color: "#5FA0A4" }}>
-          The snow was sparkling..{props.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" style={{ backgroundColor: "#5FA0A4", color: "#e0f5f4" }}>Experience again</Button>
-        <Button size="small" style={{ backgroundColor: "#5FA0A4", color: "#e0f5f4" }}>Share</Button>
-      </CardActions>
-      </div>
-    </Card>
-    </div>
+          </ButtonBase>
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column" spacing={2}>
+            <Grid item xs>
+              <Typography gutterBottom variant="subtitle1" component="div">
+                TOP OF THE WORLD
+              </Typography>
+              <Typography variant="body2" gutterBottom>
+                Purchased 2022/04/22
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                ID: 1030114
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography sx={{ cursor: 'pointer' }} variant="body2">
+                Remove
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Typography variant="subtitle1" component="div">
+              $19.00
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Paper>
   );
 }
