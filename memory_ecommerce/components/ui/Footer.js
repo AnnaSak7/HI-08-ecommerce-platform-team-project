@@ -24,9 +24,10 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function AutoGrid() {
-  // function clickHandler(event) {
-  //   event.preventDefault();
-  // }
+  function clickHandler() {
+    //event.preventDefault();
+    alert("you pressed button");
+  }
 
   return (
     <Box sx={{ flexGrow: 1, padding: "2rem", bgcolor: "#2C3F40" }}>
@@ -84,12 +85,13 @@ export default function AutoGrid() {
               />
               <br />
               <Button
+                onClick={clickHandler}
                 variant="outlined"
                 style={{ backgroundColor: "#5FA0A4", color: "#fff" }}
-                // onClick={clickHandler}
               >
                 SUBMIT
               </Button>
+
               <Stack spacing={2} direction="row"></Stack>
             </Box>
           </Item>
