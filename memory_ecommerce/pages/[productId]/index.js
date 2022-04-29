@@ -1,15 +1,10 @@
 import React from "react";
 import { MongoClient, ObjectId } from "mongodb";
-import { Head } from "next/head";
 import ProductDetails from "../../components/products/ProductDetails";
 
-const ProductDetail = (props) => {
+export default function ProductDetail(props) {
   return (
     <>
-      <Head>
-        <title>{props.productData.title}</title>
-        <meta name="description" content={props.productData.description} />
-      </Head>
       <ProductDetails
         image={props.productData.image}
         name={props.productData.name}
@@ -17,7 +12,7 @@ const ProductDetail = (props) => {
       />
     </>
   );
-};
+}
 
 export async function getStaticPaths() {
   const client = await MongoClient.connect(process.env.MONGO_URI);
@@ -26,20 +21,21 @@ export async function getStaticPaths() {
   const products = await productCollection.find({}, { _id: 1 }).toArray();
   console.log("products is ", products);
   client.close();
-
+  const paths = products.map((product) => ({
+    params: {
+      productId: product._id.toString(),
+    },
+  }));
+  console.log("paths : ", paths);
   return {
+    paths,
     fallback: false,
-    paths: products.map((product) => {
-      params: {
-        productId: product._id.toString();
-      }
-    }),
   };
 }
 
 export async function getStaticProps(context) {
   //fetch data for a single product
-  const productId = context.params.id;
+  const productId = context.params.productId;
   console.log("productId is ", productId);
   const client = await MongoClient.connect(process.env.MONGO_URI);
   const db = client.db();
@@ -61,5 +57,3 @@ export async function getStaticProps(context) {
     },
   };
 }
-
-export default ProductDetail;
