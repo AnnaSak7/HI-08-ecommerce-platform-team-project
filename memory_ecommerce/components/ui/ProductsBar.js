@@ -12,29 +12,11 @@ export default function ProductsBar(props) {
     setValue(newValue);
   };
 
-  const showDetailsHandler = () => {
-    switch (id) {
-      case "1":
-        console.log("value: ", value);
-        router.push("/62666fd2f92bdf3fb20675a9");
-        break;
-      case "2":
-        router.push("/626670ddf92bdf3fb20675aa");
-        break;
-      case "3":
-        router.push("/626674def92bdf3fb20675ab");
-        break;
-      case "4":
-        router.push("/6266758df92bdf3fb20675ac");
-        break;
-      case "5":
-        router.push("/62667676f92bdf3fb20675ad");
-        break;
-      default:
-        router.push("/");
-    }
-    console.log("value is ", value);
+  const showDetailsHandler = (path) => {
+    router.push(`/${path}`);
+    console.log("value is ", path);
   };
+
   return (
     <Box sx={{ width: "100%" }}>
       <Tabs
@@ -50,31 +32,31 @@ export default function ProductsBar(props) {
           id="1"
           value="1"
           label="Lavish trip"
-          onClick={showDetailsHandler}
+          onClick={(e) => showDetailsHandler("/626670ddf92bdf3fb20675aa")}
         />
         <Tab
           id="2"
           value="2"
           label="Long night out"
-          onClick={showDetailsHandler}
+          onClick={(e) => showDetailsHandler("/6266758df92bdf3fb20675ac")}
         />
         <Tab
           id="3"
           value="3"
           label="Top of the world"
-          onClick={showDetailsHandler}
+          onClick={(e) => showDetailsHandler("/62666fd2f92bdf3fb20675a9")}
         />
         <Tab
           id="4"
           value="4"
           label="Butterflies in the stomach"
-          onClick={showDetailsHandler}
+          onClick={(e) => showDetailsHandler("/62666fd2f92bdf3fb20675a9")}
         />
         <Tab
           id="5"
           value="5"
           label="Pearl white beaches"
-          onClick={showDetailsHandler}
+          onClick={(e) => showDetailsHandler("/62667676f92bdf3fb20675ad")}
         />
       </Tabs>
     </Box>
