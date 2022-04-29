@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useRef } from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -24,10 +25,17 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function AutoGrid() {
-  function clickHandler() {
+  const inputClick = useRef();
+  const clickHandler = () => {
     //event.preventDefault();
     alert("you pressed button");
-  }
+    const inputMail = inputClick.current.value;
+
+    const mailData = {
+      mail: inputMail,
+    };
+    console.log(mailData);
+  };
 
   return (
     <Box sx={{ flexGrow: 1, padding: "2rem", bgcolor: "#2C3F40" }}>
@@ -70,6 +78,7 @@ export default function AutoGrid() {
               the most recommended.
             </Typography>
             <Box
+              onClick={clickHandler}
               component="form"
               sx={{
                 "& > :not(style)": { m: 1, width: "25ch" },
@@ -82,10 +91,11 @@ export default function AutoGrid() {
                 label="Email"
                 variant="outlined"
                 style={{ backgroundColor: "#fff", borderRadius: "5px" }}
-              />
+              >
+                <input type="text" ref={inputClick} />
+              </TextField>
               <br />
               <Button
-                onClick={clickHandler}
                 variant="outlined"
                 style={{ backgroundColor: "#5FA0A4", color: "#fff" }}
               >
