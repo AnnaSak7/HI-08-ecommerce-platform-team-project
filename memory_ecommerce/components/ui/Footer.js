@@ -24,10 +24,10 @@ const Item = styled(Paper)(({ theme }) => ({
   color: "#B5E0DF",
 }));
 
-export default function AutoGrid() {
+export default function Footer() {
   const inputClick = useRef();
-  const clickHandler = () => {
-    //event.preventDefault();
+  const clickHandler = (e) => {
+    e.preventDefault();
     alert("you pressed button");
     const inputMail = inputClick.current.value;
 
@@ -78,7 +78,7 @@ export default function AutoGrid() {
               the most recommended.
             </Typography>
             <Box
-              onClick={clickHandler}
+              onSubmit={clickHandler}
               component="form"
               sx={{
                 "& > :not(style)": { m: 1, width: "25ch" },
@@ -101,7 +101,6 @@ export default function AutoGrid() {
               >
                 SUBMIT
               </Button>
-
               <Stack spacing={2} direction="row"></Stack>
             </Box>
           </Item>
