@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useRef } from "react";
+import { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -25,16 +25,19 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function Footer() {
-  const inputClick = useRef();
-  const clickHandler = (e) => {
-    e.preventDefault();
+  const [mail, setMail] = useState("");
+  const mailChange = (e) => {
+    setMail(e.target.value);
+  };
+  const clickHandler = () => {
+    //e.preventDefault();
     alert("you pressed button");
-    const inputMail = inputClick.current.value;
+    //const inputMail = inputClick.current.value;
 
     const mailData = {
-      mail: inputMail,
+      mail: mail,
     };
-    console.log(mailData);
+    console.log(mailData.mail);
   };
 
   return (
@@ -78,7 +81,6 @@ export default function Footer() {
               the most recommended.
             </Typography>
             <Box
-              onSubmit={clickHandler}
               component="form"
               sx={{
                 "& > :not(style)": { m: 1, width: "25ch" },
@@ -91,11 +93,12 @@ export default function Footer() {
                 label="Email"
                 variant="outlined"
                 style={{ backgroundColor: "#fff", borderRadius: "5px" }}
+                onChange={(e) => mailChange(e)}
               >
-                <input type="text" ref={inputClick} />
               </TextField>
               <br />
               <Button
+                onClick={clickHandler}
                 variant="outlined"
                 style={{ backgroundColor: "#5FA0A4", color: "#fff" }}
               >
