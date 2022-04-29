@@ -5,6 +5,7 @@ import ProductList from "../components/products/ProductList";
 import Navbar from "../components/ui/Navbar";
 import Hero from "../public/images/HeroImage.png";
 
+
 export default function Home(props) {
   return (
     <>
