@@ -19,14 +19,14 @@ export async function getStaticPaths() {
   const db = client.db();
   const productCollection = db.collection("products");
   const products = await productCollection.find({}, { _id: 1 }).toArray();
-  console.log("products is ", products);
+  // console.log("products is ", products);
   client.close();
   const paths = products.map((product) => ({
     params: {
       productId: product._id.toString(),
     },
   }));
-  console.log("paths : ", paths);
+  // console.log("paths : ", paths);
   return {
     paths,
     fallback: false,
@@ -43,7 +43,7 @@ export async function getStaticProps(context) {
   const selectedProduct = await productCollection.findOne({
     _id: ObjectId(productId),
   });
-  console.log("selectedProduct : ", selectedProduct);
+  // console.log("selectedProduct : ", selectedProduct);
   client.close();
 
   return {
