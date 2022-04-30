@@ -116,7 +116,7 @@ const NewUserForm = (props) => {
           </CustomButton>
         </div>
         <div className="mb-3">
-          Already have an account? <Link href="/">Sing-In</Link>
+          Already have an account? <Link href="/signin">Sing-In</Link>
         </div>
       </Form>
     </Container>

@@ -50,7 +50,7 @@ export default function PrimarySearchAppBar() {
   const handleMenuClose = () => {
     setAnchorEl(null);
     //handleMobileMenuClose();
-    router.push("/signup");
+    router.push("/signin");
   };
 
   const logoHandler = () => {

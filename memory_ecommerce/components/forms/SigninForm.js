@@ -45,36 +45,32 @@ const CustomButton = styled(Button)({
   },
 });
 
-const SigninForm = () => {
+const SigninForm = (props) => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
-  //   const submitHandler = (e) => {
-  //     e.preventDefault();
+  const submitHandler = (e) => {
+    e.preventDefault();
 
-  //     const enteredEmail = emailInputRef.current.value;
-  //     const enteredPassword = passwordInputRef.current.value;
+    const enteredEmail = emailInputRef.current.value;
+    const enteredPassword = passwordInputRef.current.value;
 
-  //     if (enteredPassword !== enteredConfirmPassword) {
-  //       console.log("pass", passwordInputRef);
-  //       toast.error("Passwords do not match");
-  //     }
-  //     try {
-  //       const userData = {
-  //         email: enteredEmail,
-  //         password: enteredPassword,
-  //       };
+    try {
+      const userData = {
+        email: enteredEmail,
+        password: enteredPassword,
+      };
 
-  //       //   props.onAddUser(userData);
-  //     } catch (err) {
-  //       toast.error(err);
-  //     }
-  //   };
+      props.onLogin(userData);
+    } catch (err) {
+      toast.error(err);
+    }
+  };
 
   return (
     <Container className={styles.formContainer}>
       <h1 className="my-3">Sign In</h1>
-      <Form>
+      <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -98,7 +94,7 @@ const SigninForm = () => {
           </CustomButton>
         </div>
         <div className="mb-3">
-          Already have an account? <Link href="/">Sing-In</Link>
+          Have not sign up yet? <Link href="/signup">Sing-Up</Link>
         </div>
       </Form>
     </Container>

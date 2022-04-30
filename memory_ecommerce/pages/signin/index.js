@@ -1,38 +1,30 @@
+import { ContactlessOutlined } from "@mui/icons-material";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useRef } from "react";
 import SigninForm from "../../components/forms/SigninForm";
+import { toast } from "react-toastify";
 
 export default function SigninPage({ users }) {
   console.log("users : ", users);
   const router = useRouter();
 
-  const emailInputRef = useRef();
-  const passwordInputRef = useRef();
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    const enteredEmail = emailInputRef.current.value;
-    const enteredPassword = passwordInputRef.current.value;
-
-    const user = users.find((email) => email === enteredEmail);
+  const loginHandler = (enteredUserData) => {
+    console.log("euD : ", enteredUserData);
+    const user = users.find((user) => user.email === enteredUserData.email);
+    // const userPassword = users.find(
+    //   (password) => password === enteredUserData.password
+    // );
 
     console.log("user : ", user);
-    // if (enteredPassword !== enteredConfirmPassword) {
-    //   console.log("pass", passwordInputRef);
-    //   toast.error("Passwords do not match");
-    // }
-    // try {
-    //   const userData = {
-    //     email: enteredEmail,
-    //     password: enteredPassword,
-    //   };
+    if (user === undefined) {
+      toast.error("Entered email does not exist");
+    }
 
-    // } catch (err) {
-    //   toast.error(err);
-    // }
+    if (user.password !== enteredUserData.password) {
+      toast.error("Wrong password");
+    }
+    router.push("/userpage");
   };
 
   return (
@@ -41,7 +33,7 @@ export default function SigninPage({ users }) {
         <title>Sign In</title>
         <meta name="description" content="Sign up and create your account" />
       </Head>
-      <SigninForm />
+      <SigninForm onLogin={loginHandler} />
     </>
   );
 }
