@@ -4,6 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import SigninForm from "../../components/forms/SigninForm";
 import { toast } from "react-toastify";
+import { useForkRef } from "@mui/material";
 
 export default function SigninPage({ users }) {
   console.log("users : ", users);
@@ -24,7 +25,13 @@ export default function SigninPage({ users }) {
     if (user.password !== enteredUserData.password) {
       toast.error("Wrong password");
     }
-    router.push("/userpage");
+
+    if (
+      user.email === enteredUserData.email &&
+      user.password === enteredUserData.password
+    ) {
+      router.push("/userpage");
+    }
   };
 
   return (
