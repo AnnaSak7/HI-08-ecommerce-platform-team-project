@@ -45,34 +45,23 @@ const CustomButton = styled(Button)({
   },
 });
 
-const NewUserForm = (props) => {
-  const nameInputRef = useRef();
+const SigninForm = (props) => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  const confirmPasswordInputRef = useRef();
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    const enteredName = nameInputRef.current.value;
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
-    const enteredConfirmPassword = confirmPasswordInputRef.current.value;
 
-    if (enteredPassword !== enteredConfirmPassword) {
-      console.log("pass", passwordInputRef);
-      console.log("conf", confirmPasswordInputRef);
-      toast.error("Passwords do not match");
-    }
     try {
       const userData = {
-        name: enteredName,
         email: enteredEmail,
         password: enteredPassword,
-        confirmPassword: enteredConfirmPassword,
       };
 
-      props.onAddUser(userData);
+      props.onLogin(userData);
     } catch (err) {
       toast.error(err);
     }
@@ -80,12 +69,8 @@ const NewUserForm = (props) => {
 
   return (
     <Container className={styles.formContainer}>
-      <h1 className="my-3">Sign Up</h1>
+      <h1 className="my-3">Sign In</h1>
       <Form onSubmit={submitHandler}>
-        <Form.Group className="mb-3" controlId="name">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="name" required ref={nameInputRef}></Form.Control>
-        </Form.Group>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -102,25 +87,18 @@ const NewUserForm = (props) => {
             ref={passwordInputRef}
           ></Form.Control>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="confirmPassword">
-          <Form.Label>Confirm Password</Form.Label>
-          <Form.Control
-            type="password"
-            required
-            ref={confirmPasswordInputRef}
-          ></Form.Control>
-        </Form.Group>
+
         <div className="mb-3">
           <CustomButton type="submit" variant="outlined">
-            Sign up
+            Sign in
           </CustomButton>
         </div>
         <div className="mb-3">
-          Already have an account? <Link href="/signin">Sing-In</Link>
+          Have not sign up yet? <Link href="/signup">Sing-Up</Link>
         </div>
       </Form>
     </Container>
   );
 };
 
-export default NewUserForm;
+export default SigninForm;
