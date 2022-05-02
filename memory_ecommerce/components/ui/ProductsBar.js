@@ -50,7 +50,7 @@ export default function ProductsBar(props) {
           id="4"
           value="4"
           label="Butterflies in the stomach"
-          onClick={(e) => showDetailsHandler("/62666fd2f92bdf3fb20675a9")}
+          onClick={(e) => showDetailsHandler("/626674def92bdf3fb20675ab")}
         />
         <Tab
           id="5"
