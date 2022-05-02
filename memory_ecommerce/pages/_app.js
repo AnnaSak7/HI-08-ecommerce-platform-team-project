@@ -7,14 +7,28 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#5FA0A4" },
-    secondary: { main: "#B5E0DF" },
+    primary: { 
+      main: "#5FA0A4"
+    },
+    secondary: {
+      main: "#B5E0DF"
+    },
     // info color pink on badge in navbar
-    info: { main: "#FFC0CB" },
-    background: { default: "#FFC0CB" },
+    info: { 
+      main: "#FFC0CB" 
+    },
+    background: { 
+      default: "#FFC0CB",
+    }
   },
-  typography: { htmlFontSize: 16 },
-  h1: { FontFamily: "Courier New" },
+  typography: { 
+    fontSize: 14,
+    htmlFontSize: 12,
+    fontFamily: "Courier New"
+  },
+    h4: { 
+      fontFamily: "Roboto"
+    },
 });
 
 function MyApp({ Component, pageProps }) {
