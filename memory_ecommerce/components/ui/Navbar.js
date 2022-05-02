@@ -36,6 +36,16 @@ export default function PrimarySearchAppBar() {
   const isMenuOpen = Boolean(anchorEl);
   const [suggestions, setSuggestions] = React.useState([]);
   const [selectedSuggestion, setSelectedSuggestion] = React.useState("");
+  const [productQT, setproductQT] = React.useState();
+
+  React.useEffect(() => {
+    const products = JSON.parse(localStorage.getItem("products"));
+    if (products == null) {
+      setproductQT();
+    } else {
+      setproductQT(products.length);
+    }
+  }, []);
 
   const openProfileHandler = (event) => {
     console.log("opening user section");
@@ -134,7 +144,7 @@ export default function PrimarySearchAppBar() {
                 color="inherit"
                 onClick={openCartHandler}
               >
-                <Badge badgeContent={4} color="info">
+                <Badge badgeContent={productQT} color="info">
                   <ShoppingCartIcon />
                 </Badge>
               </IconButton>
