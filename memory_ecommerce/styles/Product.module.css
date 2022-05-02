@@ -18,7 +18,7 @@
 }
 .imageContainer {
   width: 50%;
-  height: 50vh;
+  height: 60vh;
   background-color: #000;
   object-fit: cover;
 }
@@ -27,14 +27,17 @@
   height: 100%;
 }
 .textBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 50%;
-  height: 50vh;
+  height: 60vh;
   background-color: #5fa0a4;
-  padding: 7rem;
-  font-size: 1.3rem;
+  padding: 3rem 5rem;
+  font-size: 1.1rem;
 }
 
 .productName {
   padding-bottom: 2rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
