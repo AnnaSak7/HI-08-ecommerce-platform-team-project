@@ -5,6 +5,8 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import ButtonBase from "@mui/material/ButtonBase";
 import Image from "next/image";
+import { MongoClient } from "mongodb";
+import { CleaningServicesTwoTone } from "@mui/icons-material";
 
 const Img = styled("img")({
   margin: "auto",
@@ -59,4 +61,46 @@ export default function ComplexGrid() {
       </Grid>
     </Paper>
   );
+}
+
+export async function getStaticPaths() {
+  const client = await MongoClient.connect(process.env.MONGO_URI);
+  const db = client.db();
+  const orderCollection = db.collection("order");
+  const orders = await orderCollection.find({}, { userId: 1 }).toArray();
+
+  client.close();
+
+  const paths = orders.map((order) => ({
+    params: {
+      userId: order.userId.toString(),
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const userId = context.params.userId;
+  const client = await MongoClient.connect(process.env.MONGO_URI);
+  const db = client.db();
+  const orderCollection = db.collection("orders");
+  const selectedUser = await orderCollection.findOne({ userId: userId });
+
+  client.close();
+
+  return {
+    props: {
+      orderData: {
+        id: selectedUser._id.toString(),
+        orderID: selectedUser.OrderID,
+        product: selectedUser.product,
+        purchasedDate: selectedUser.purchasedDate,
+        price: selectedUser.price,
+      },
+    },
+  };
 }

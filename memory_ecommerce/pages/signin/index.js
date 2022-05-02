@@ -30,7 +30,7 @@ export default function SigninPage({ users }) {
       user.email === enteredUserData.email &&
       user.password === enteredUserData.password
     ) {
-      router.push("/userpage");
+      router.push("/" + user.id);
     }
   };
 
