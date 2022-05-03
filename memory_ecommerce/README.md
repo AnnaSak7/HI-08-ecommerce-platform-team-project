@@ -33,4 +33,42 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+### setup for testing
 
+npm i -D @testing-library/jest-dom @testing-library/react babel-jest jest
+
+touch .babelrc
+
+add =>
+{
+"presets": ["next/babel"]
+}
+
+in package.json
+"test": "jest"
+
+mkdir **mocks**
+touch fileMock.js styleMock.js
+
+in fileMock.js add
+(module.exports = "test-file-stub")
+
+in styleMock.js add
+module.exports = {};
+
+touch jest.setup.js (in the root directory)
+add => import '@testing-library/jest-dom/extend-expect'
+
+touch jest.config.js (in the root directory)
+add => setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
+
+npm i -D jest-environment-jsdom
+
+mkdir **test** touch index.text.jsx
+write testing code
+
+npm install --save-dev @shelf/jest-mongodb
+
+TextEncoder is not defined ====>
+in : node_modules/whatwg-url/dist/encoding.js
+add at top : const { TextEncoder, TextDecoder } = require("util");s

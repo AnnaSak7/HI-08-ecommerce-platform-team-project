@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -23,7 +24,14 @@
     "react-toastify": "^8.2.0"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^2.2.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "babel-jest": "^28.0.3",
     "eslint": "8.13.0",
-    "eslint-config-next": "12.1.5"
+    "eslint-config-next": "12.1.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.0.3",
+    "jest-environment-jsdom": "^28.0.2"
   }
 }

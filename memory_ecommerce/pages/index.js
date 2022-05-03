@@ -5,7 +5,6 @@ import ProductList from "../components/products/ProductList";
 import Navbar from "../components/ui/Navbar";
 import Hero from "../public/images/HeroImage.png";
 
-
 export default function Home(props) {
   return (
     <>
@@ -15,6 +14,7 @@ export default function Home(props) {
       </Head>
       <div>
         <div id="hero">
+          <h1>Test</h1>
           <Image id="heroImage" src={Hero} alt="Hero" />
         </div>
         <ProductList memories={props.memories} />
