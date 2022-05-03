@@ -33,7 +33,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-### setup for testing
+## setup for testing
 
 npm i -D @testing-library/jest-dom @testing-library/react babel-jest jest
 

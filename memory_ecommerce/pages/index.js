@@ -17,7 +17,7 @@ export default function Home(props) {
           <h1>Test</h1>
           <Image id="heroImage" src={Hero} alt="Hero" />
         </div>
-        <ProductList memories={props.memories} />
+        {/* <ProductList memories={props.memories} /> */}
       </div>
     </>
   );

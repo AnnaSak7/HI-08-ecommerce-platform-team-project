@@ -11,7 +11,7 @@ const ProductCardEven = (props) => {
     router.push("/" + props.id);
   };
   return (
-    <div className={styles.evenContainer}>
+    <div data-testid="evenCard" className={styles.evenContainer}>
       <div className={styles.imageContainer} onClick={showDetailsHandler}>
         <img src={props.image} alt={props.name} width="500px" height="300px" />
       </div>
