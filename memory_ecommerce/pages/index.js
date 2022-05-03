@@ -4,7 +4,7 @@ import Image from "next/image";
 import ProductList from "../components/products/ProductList";
 import Navbar from "../components/ui/Navbar";
 import Hero from "../public/images/HeroImage.png";
-
+import styles from "../styles/Product.module.css";
 
 export default function Home(props) {
   return (
@@ -14,8 +14,8 @@ export default function Home(props) {
         <meta name="description" content="Memory store" />
       </Head>
       <div>
-        <div id="hero">
-          <Image id="heroImage" src={Hero} alt="Hero" />
+        <div className={styles.hero}>
+          <Image className={styles.heroImage} src={Hero} alt="Hero" />
         </div>
         <ProductList memories={props.memories} />
       </div>
