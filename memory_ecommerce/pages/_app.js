@@ -24,11 +24,7 @@ const theme = createTheme({
   typography: { 
     fontSize: 14,
     htmlFontSize: 12,
-    fontFamily: "Courier New"
   },
-    h4: { 
-      fontFamily: "Roboto"
-    },
 });
 
 function MyApp({ Component, pageProps }) {
