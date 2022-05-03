@@ -10,6 +10,7 @@ export default function ProductsBar(props) {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    console.log("value is : ", value);
   };
 
   const showDetailsHandler = (path) => {
