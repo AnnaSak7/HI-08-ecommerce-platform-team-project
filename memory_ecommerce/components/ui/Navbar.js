@@ -49,7 +49,8 @@ export default function PrimarySearchAppBar() {
 
   const handleMenuClose = () => {
     setAnchorEl(null);
-    handleMobileMenuClose();
+    //handleMobileMenuClose();
+    router.push("/signin");
   };
 
   const logoHandler = () => {
@@ -133,9 +134,7 @@ export default function PrimarySearchAppBar() {
                 color="inherit"
                 onClick={openCartHandler}
               >
-
                 <Badge badgeContent={4} color="info">
-
                   <ShoppingCartIcon />
                 </Badge>
               </IconButton>
