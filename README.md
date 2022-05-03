@@ -4,7 +4,7 @@
 
 ## :page_facing_up: Brief
 
-**:zap: Collaborating in a team and through an Agile workflow and the SCRUM method construct an eCommerce site. <br>
+**:zap: Collaborating in a team and through an Agile workflow and the SCRUM method construct an eCommerce site.** <br>
 
 **:zap: Project idea: The shop will sell memories to customer that for any reason don't have the posibilities to experience one.** <br>
 
