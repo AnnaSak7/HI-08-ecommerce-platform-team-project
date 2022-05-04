@@ -15,15 +15,21 @@ const theme = createTheme({
   typography: { htmlFontSize: 16 },
 });
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, todo }) {
   return (
     <ThemeProvider theme={theme}>
       <ToastContainer position="top-center" limit={1} />
       <Layout>
-        <Component {...pageProps} />
+        <Component {...pageProps} todo={todo} />
       </Layout>
     </ThemeProvider>
   );
 }
+
+MyApp.getInitialProps = async (ctx) => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const json = await res.json();
+  return { todo: json };
+};
 
 export default MyApp;

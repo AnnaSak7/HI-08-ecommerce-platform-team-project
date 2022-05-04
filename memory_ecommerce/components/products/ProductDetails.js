@@ -9,10 +9,11 @@ const ProductDetails = (props) => {
     } else {
       let oldData = JSON.parse(localStorage.getItem("products"));
       oldData.push(props.name);
-
       localStorage.setItem("products", JSON.stringify(oldData));
     }
   };
+
+  
 
   return (
     <section>

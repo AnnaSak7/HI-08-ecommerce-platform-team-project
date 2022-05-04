@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import classes from "./Cart.module.css";
 import Divider from "@mui/material/Divider";
 
-export default function Cart() {
+export default function Cart(props) {
   return (
     <div className={classes.cartWrapper}>
       <Card className={classes.cartContainer} sx={{ minWidth: 275 }}>

@@ -3,6 +3,8 @@ import { MongoClient, ObjectId } from "mongodb";
 import ProductDetails from "../../components/products/ProductDetails";
 
 export default function ProductDetail(props) {
+  console.log(props.todo);
+
   return (
     <>
       <ProductDetails
