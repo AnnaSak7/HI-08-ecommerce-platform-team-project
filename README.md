@@ -2,6 +2,9 @@
 
 # :sparkles: Memory Shop :sparkles:
 
+![](https://github.com/
+HI-08-ecommerce-platform-team-project/https://github.com/AnnaSak7/HI-08-ecommerce-platform-team-project/blob/main/memoryStore.gif)
+
 ## :page_facing_up: Brief
 
 **:zap: Collaborating in a team and through an Agile workflow and the SCRUM method construct an eCommerce site.** <br>
@@ -27,7 +30,6 @@
 :zap: GIT and GitHub<br>
 :zap: Figma<br>
 :zap: Trello**<br>
-
 
 ## :mechanical_arm: Skills developed
 
