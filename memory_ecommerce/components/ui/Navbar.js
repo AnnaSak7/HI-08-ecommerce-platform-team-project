@@ -119,7 +119,7 @@ export default function PrimarySearchAppBar() {
                 noWrap
                 component="div"
               >
-                Memory X
+                Omoide
               </Typography>
               <Box sx={{ flexGrow: 1 }} />
               <input
