@@ -4,15 +4,16 @@
 
 ## :page_facing_up: Brief
 
-:zap: Collaborating in a team and through an Agile workflow and the SCRUM method construct an eCommerce site. <br>
+**:zap: Collaborating in a team and through an Agile workflow and the SCRUM method construct an eCommerce site.** <br>
 
-:zap: Project idea: The shop will sell memories to customer that for any reason don't have the posibilities to experience one.\*\* <br>
+**:zap: Project idea: The shop will sell memories to customer that for any reason don't have the posibilities to experience one.** <br>
 
 ## :card_index_dividers: Project Setup
 
-:zap: Project Strategy: Persona, Product Vision, Product Backlog. <br>
+**:zap: Project Strategy: Persona, Product Vision, Product Backlog. <br>
 :zap: Decide upon a SCRUM master <br>
-:zap: Structure project timeline and schedule.\*\*<br>
+:zap: Structure project timeline and schedule.**<br>
+**:zap: Code and Collaborate.**<br>
 
 ## :computer: Technologies & Tools
 
@@ -27,11 +28,6 @@
 :zap: Figma<br>
 :zap: Trello**<br>
 
-     Coaching the team members in self-management and cross-functionality;
-
-Helping the Scrum Team focus on creating high-value Increments that meet the Definition of Done;
-Causing the removal of impediments to the Scrum Team’s progress; and,
-Ensuring that all Scrum events take place and are positive, productive, and kept within the timebox.
 
 ## :mechanical_arm: Skills developed
 

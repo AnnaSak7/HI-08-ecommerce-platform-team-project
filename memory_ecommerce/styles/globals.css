@@ -2,10 +2,11 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  border-left: 1.1rem solid #5fa0a4;
-  border-right: 1.1rem solid #5fa0a4;
+  font-family: /*-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;*/
+    'Courier New', Courier, monospace;
+    border-left: 1rem solid #5FA0A4;
+    border-right: 1rem solid #5FA0A4;
 }
 
 a {

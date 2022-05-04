@@ -7,12 +7,24 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#5FA0A4" },
-    secondary: { main: "#B5E0DF" },
-    // trying to style info color in pink on cartbutton in navbar
-    info: { main: "#FFC0CB" },
+    primary: { 
+      main: "#5FA0A4"
+    },
+    secondary: {
+      main: "#B5E0DF"
+    },
+    // info color pink on badge in navbar
+    info: { 
+      main: "#FFC0CB" 
+    },
+    background: { 
+      default: "#FFC0CB",
+    }
   },
-  typography: { htmlFontSize: 16 },
+  typography: { 
+    fontSize: 14,
+    htmlFontSize: 12,
+  },
 });
 
 function MyApp({ Component, pageProps }) {
