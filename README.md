@@ -2,8 +2,7 @@
 
 # :sparkles: Memory Shop :sparkles:
 
-![](https://github.com/
-HI-08-ecommerce-platform-team-project/https://github.com/AnnaSak7/HI-08-ecommerce-platform-team-project/blob/main/memoryStore.gif)
+![](https://github.com/HI-08-ecommerce-platform-team-project/https://github.com/AnnaSak7/HI-08-ecommerce-platform-team-project/blob/main/memoryStore.gif)
 
 ## :page_facing_up: Brief
 
