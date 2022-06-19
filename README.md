@@ -20,7 +20,6 @@
 ## :computer: Technologies & Tools
 
 **:zap: MongoDB <br>
-:zap: Express.js <br>
 :zap: React<br>
 :zap: Node.js<br>
 :zap: Mongoose<br>
